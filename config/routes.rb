@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
+  get 'cocktails/index'
+  get 'cocktails/show'
+  get 'cocktails/new'
+  get 'cocktails/create'
   root to: 'cocktails#index'
-  resources :cocktails, only: [:new, :create, :index, :show]
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  # Cocktails - index, show, new, create
-  # root to: 'cocktails#index'
-  # resources :cocktails # except: [:destroy, :edit, :update] do
-  #   resources :doses, only: [:new, :create]
-  # # end
-  # # outside the cocktail - DELETE "doses/25"
-  # resources :doses, only: [:destroy]
+  resources :cocktails, only: [:new, :create, :index, :show] do
+    resources :doses, only: [:new, :create]
+  end
+
+  resources :doses, only: :destroy
+
+
 
   # # Cocktails - index, show, new, create
   #   # GET "cocktails"

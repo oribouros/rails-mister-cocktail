@@ -1,0 +1,35 @@
+<h1> <%= @cocktail.name %></h1>
+
+<% if notice.present? %>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <%= notice.html_safe %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+<% end %>
+
+<div>
+  <%= link_to new_cocktail_dose_path(@cocktail), class: "btn btn-outline-info" do %>
+    <i class="fa fa-plus"></i>Add an ingredient dose
+  <% end %>
+</div>
+
+<h3>Ingredients:</h3>
+
+
+<% if @cocktail.doses.any? %>
+<ul>
+  <% @cocktail.doses.each do |dose| %>
+    <li><%= dose.description %> of <%= dose.ingredient %></li>
+  <% end %>
+</ul>
+<% else %>
+  <p>No ingredients added yet.</p>
+<% end %>
+
+<div>
+  <%= link_to cocktails_path do %>
+    Back to main page
+  <% end %>
+</div>
