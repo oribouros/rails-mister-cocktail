@@ -13,10 +13,18 @@ class DosesController < ApplicationController
     @dose.cocktail = @cocktail
     @dose.save
     if @dose.save
-      redirect_to cocktail_path(@cocktail)
+      redirect_to cocktail_path(@cocktail), notice: 'Ingredient created!'
     else
       render :new
     end
+  end
+
+  # this is the only method that is not nested in the route
+  def destroy
+    @dose = Dose.find(params[:id])
+    @dose.destroy
+
+    redirect_to cocktail_path(@dose.cocktail), alert: 'Ingredient deleted!'
   end
 
   private

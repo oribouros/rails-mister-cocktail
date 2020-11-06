@@ -2,7 +2,8 @@
 
 <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.input :description %>
-  <%= f.association :ingredient %>
+  <%= f.association :ingredient, collection: Ingredient.ordered %>
+  <%= link_to 'Cancel', cocktail_path(@cocktail), class: "btn btn-outline-primary" %>
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
 
