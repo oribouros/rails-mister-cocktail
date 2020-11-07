@@ -3,5 +3,5 @@ class Ingredient < ApplicationRecord
 
   has_many :doses # dependent: :restrict_with_error
 
-  scope :ordered, -> { order(name: :asc) }
+  scope :ordered, -> { order(name: :asc) } # to add the ordered list, go google scope on validations
 end

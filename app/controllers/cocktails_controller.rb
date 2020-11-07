@@ -16,7 +16,7 @@ class CocktailsController < ApplicationController
     @cocktail.save
 
     if @cocktail.save
-      redirect_to cocktail_path(@cocktail), notice: "<strong>#{@cocktail.name}</strong>' created!"
+      redirect_to cocktail_path(@cocktail), notice: "<strong>#{@cocktail.name}</strong> created!"
     else
       render :new
     end
