@@ -32,3 +32,4 @@ json[:drinks].each do |drink|
 end
 
 puts "Ingredients are seeded. Done!"
+

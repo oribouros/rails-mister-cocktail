@@ -9,6 +9,12 @@
   </div>
 <% end %>
 
+<% if @cocktail.photo.attached? %>
+  <%= cl_image_tag @cocktail.photo.key %>
+<% end %>
+
+
+
 <div>
   <%= link_to new_cocktail_dose_path(@cocktail), class: "btn btn-outline-info" do %>
     <i class="fa fa-plus"></i>Add an ingredient dose
