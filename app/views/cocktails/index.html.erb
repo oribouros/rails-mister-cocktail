@@ -1,21 +1,18 @@
 <!-- This is the landing page -->
 
+<!-- hero banner occuping the first part of the page -->
 <div id="hero">
   <div>
     <h1 id="neon">The Mob Bar <i class="fas fa-cocktail"></i></h1>
-      <%= link_to new_cocktail_path, class: "button" do %>
-        <i class="fa fa-plus"></i> Add New
-      <% end %>
+  </div>
+    <div>
+     <h4> <%= link_to 'Add a cocktail', new_cocktail_path, class: "main-button" %> </h4>
     </div>
 </div>
 
 
-<%= link_to new_cocktail_path, class: "button" do %>
-<i class="fa fa-plus"></i> Add New
-<% end %>
-
-<ul>
+<div>
   <% @cocktails.each do |cocktail| %>
-  <li> <%=link_to cocktail.name, cocktail_path(cocktail) %></li>
+    <h3> <%=link_to cocktail.name, cocktail_path(cocktail) %> </h3>
   <% end %>
-</ul>
+</div>

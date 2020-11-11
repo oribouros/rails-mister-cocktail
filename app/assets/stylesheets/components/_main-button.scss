@@ -1,0 +1,16 @@
+.main-button {
+  color: #fff6a9;
+  padding: 15px 25px;
+  border: 2px solid #fff6a9;
+  border-radius: 10px;
+  font-family: 'Damion';
+  text-shadow: 0 0 8px #ffaa50;
+  box-shadow: 0 0 3px #ffaa50, 0 0 20px #ff8d00;
+}
+
+.main-button:hover {
+  text-decoration: none;
+color: #fff6a9;
+text-shadow: 0 0 8px #ffaa50, 0 0 20px #ff8d00;
+box-shadow: 0 0 5px #ffaa50, 0 0 20px #ff8d00, 0 0 20px #ff0000;
+}
